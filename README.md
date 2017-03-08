@@ -1,4 +1,4 @@
-# my-first-vue-template
+# my-first-vue-demo
 
 > A Vue.js project
 
