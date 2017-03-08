@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# my-first-vue-demo
+# my-vue-demo-template
 
-> my first vue demo
+> my first vue demo template
 
 ## Build Setup
 
@@ -29,6 +28,3 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-=======
-#my-first-vue-demo
->>>>>>> 0021a99b5c85e5092c54b5d12d20f4b71792fbb7

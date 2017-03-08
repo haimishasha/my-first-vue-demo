@@ -1,7 +1,7 @@
 {
-  "name": "my-first-vue-demo",
+  "name": "my-vue-demo-template",
   "version": "1.0.0",
-  "description": "my first vue demo",
+  "description": "my first vue demo template",
   "author": "hss",
   "private": true,
   "scripts": {
