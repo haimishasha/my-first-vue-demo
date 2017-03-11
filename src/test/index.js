@@ -8,27 +8,13 @@ import Content from '@/components/Content'
 import User from '@/components/user/User'
 import UserPosts from '@/components/user/UserPosts'
 import UserProfile from '@/components/user/UserProfile'
-//用于测试命名视图/组件
-/*import Layout from '@/components/layout/Page'*/
+//用于测试命名视图
 import Header from '@/components/layout/Header'
 import Sidebar from '@/components/layout/Sidebar'
-import Main from '@/components/layout/Main'
+import Main from '@/components/Main'
 import Footer from '@/components/layout/Footer'
-import Page from '@/components/layout/Page'
 //需要调用Router
 Vue.use(Router)
-
-//0.用于测试组件
-//可以用  Vue.extend()  创建一个组件构造器：
-var MyComponent = Vue.extend({
-    template : '<div>A custom component!</div>'
-})
-//全局注册组件，tag 为 my-component
-Vue.component('my-component',  MyComponent)
-Vue.component('my-main',  Main)
-Vue.component('my-sidebar',  Sidebar)
-Vue.component('my-header',  Header)
-Vue.component('my-footer',  Footer)
 
 
 // 1. 定义（路由）组件。
@@ -48,7 +34,7 @@ const routes = [
   { path: '/foo',       name: 'foo',         component: Foo },
   { path: '/bar',       name: 'bar',         component: Bar },
   { path: '/content',   name: 'content',     component: Content},
-  { path: '/page',      name: 'page',        component: Page},
+  { path: '/main', component: Main},
   // 动态路径参数 以冒号开头
   { 
     path: '/user/:id',  
@@ -71,16 +57,7 @@ const routes = [
       }
     ]
   },
-  /*{ path: '/layout',   name: 'layout',     component: Layout},*/
-  { path: '/a', redirect: '/foo' },
-  { path: '/b', redirect: { name: 'bar' }},
-  { path: '/c', redirect: to => {
-      // 方法接收 目标路由 作为参数
-      // return 重定向的 字符串路径/路径对象
-      return "content"
-    }
-  },
-  { path: '/d', component: User, alias: '/ddd' }
+  
   /*{ path: '*',          name: '404',        component: NotFoundComponent }*/
 ]
 
