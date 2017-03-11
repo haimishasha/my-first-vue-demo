@@ -11,8 +11,11 @@ export default {
   	name: 'user',
   	watch:{
 	    '$route' (to, from) {
-	      // 对路由变化作出响应...
-	      alert('路由变化了');
+	      	// 对路由变化作出响应...
+	      	//alert('路由变化了'+to.path+"-"+from.path);
+	      	const toDepth = to.path.split('/').length
+		    const fromDepth = from.path.split('/').length
+		    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
 	    }
 	}
 }

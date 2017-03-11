@@ -35,7 +35,7 @@ Vue.component('my-footer',  Footer)
 
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
-const Foo = { template: '<div><h2>foo</h2></div>' }
+const Foo = { template: '<transition name="fase"><div><h2>foo</h2></div></transition>' }
 const Bar = { template: '<div><h2>bar<h2></div>' }
 const NotFoundComponent = {template: '<div>not found 404</div>'}
 
@@ -49,7 +49,8 @@ const routes = [
   { path: '/',          name: 'home',        component: Home},
   { path: '/foo',       name: 'foo',         component: Foo },
   { path: '/bar',       name: 'bar',         component: Bar },
-  { path: '/content',   name: 'content',     component: Content},
+  //测试路由元信息
+  { path: '/content',   name: 'content',     component: Content, meta: { requiresAuth: true }},
   { path: '/page',      name: 'page',        component: Page},
   { path: '/tongxin',      name: 'tongxin',        component: Father},
   // 动态路径参数 以冒号开头
@@ -83,14 +84,13 @@ const routes = [
       return "content"
     }
   },
-  { path: '/d', component: User, alias: '/ddd' }
-  /*{ path: '*',          name: '404',        component: NotFoundComponent }*/
+  { path: '/d', component: User, alias: '/ddd' },
+  { path: '*',          name: '404',        component: NotFoundComponent }
 ]
 
 // 3. 创建 router 实例，然后传 `routes` 配置
 // 你还可以传别的配置参数, 不过先这么简单着吧。
-
-export default new Router({
+const router = new Router({
   /*mode: 'history',*/
   routes, // （缩写）相当于 routes: routes
   /*// 当hashbang的值为true时，所有的路径都会被格式化已#!开头，
@@ -98,6 +98,27 @@ export default new Router({
     history: true,
     saveScrollPosition: true,*/
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    /*if (!auth.loggedIn()) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }*/
+    next("/foo")
+    console.log(1)
+  } else {
+    next() // 确保一定要调用 next()
+  }
+})
+
+export default router
 
 
 

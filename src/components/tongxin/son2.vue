@@ -6,9 +6,9 @@
 	    <input v-model="msg">
 	    <button v-on:click="notify">Dispatch Event</button>
 	    <br>
-	    <span> $
+	    <!-- <span> $
 	    	<input ref="input" v-bind:value="value" v-on:input="updateValue($event.target.value)">
-		</span>
+	    		</span> -->
 	</div>
 </template>
 
@@ -34,7 +34,7 @@
 				this.counter += 1
       			this.$emit('increment')
 			},
-			// 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制
+			/*// 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制
 		    updateValue: function (value) {
 		      var formattedValue = value
 		        // 删除两侧的空格符
@@ -47,7 +47,7 @@
 		      }
 		      // 通过 input 事件发出数值
 		      this.$emit('input', Number(formattedValue))
-		    },
+		    },*/
 		  
 		}
 	}
