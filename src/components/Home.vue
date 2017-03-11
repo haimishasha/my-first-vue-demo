@@ -48,6 +48,9 @@
 
     <h2>4.组件测试</h2>
     <router-link to="/page">to page</router-link>
+
+    <h2>5.组件之间的通信测试</h2>
+    <router-link to="/tongxin">to tongxin</router-link>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>

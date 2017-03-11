@@ -15,6 +15,8 @@ import Sidebar from '@/components/layout/Sidebar'
 import Main from '@/components/layout/Main'
 import Footer from '@/components/layout/Footer'
 import Page from '@/components/layout/Page'
+
+import Father from '@/components/tongxin/Father'
 //需要调用Router
 Vue.use(Router)
 
@@ -49,6 +51,7 @@ const routes = [
   { path: '/bar',       name: 'bar',         component: Bar },
   { path: '/content',   name: 'content',     component: Content},
   { path: '/page',      name: 'page',        component: Page},
+  { path: '/tongxin',      name: 'tongxin',        component: Father},
   // 动态路径参数 以冒号开头
   { 
     path: '/user/:id',  

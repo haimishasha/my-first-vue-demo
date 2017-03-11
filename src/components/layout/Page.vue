@@ -12,11 +12,6 @@
 		<h1>page-测试组件2-局部</h1>
 		<v-head></v-head>
         <v-sidebar></v-sidebar>
-		<!-- 没有测试成功 -->
-		<!-- <router-view class="view one"></router-view>
-		<router-view class="view two" name="header"></router-view>
-		<router-view class="view three" name="sidebar"></router-view>
-		<router-view class="view four" name="footer"></router-view> -->
 
 		<!-- 动态组件 -->
 		<h1>page-测试动态组件</h1>
@@ -28,6 +23,14 @@
 		    <br>
 		    <component :is="currentView"></component>
 		</div>
+
+
+		<!-- 没有测试成功 -->
+		<!-- 
+		<router-view class="view one"></router-view>
+		<router-view class="view two" name="v-head"></router-view>
+		<router-view class="view three" name="v-sidebar"></router-view>
+		<router-view class="view four" name="v-footer"></router-view> -->
 	</div>
 </template>
 
@@ -54,5 +57,7 @@
 			}
 		}
     }
+
+    
 </script>
 
