@@ -1,6 +1,7 @@
 //模块化机制编程需要用到Vue和Router
 import Vue from 'vue'
 import Router from 'vue-router'
+
 //用于测试跳转
 import Home from '@/components/Home'
 import Content from '@/components/Content'
@@ -18,8 +19,14 @@ import Page from '@/components/layout/Page'
 
 import Father from '@/components/tongxin/Father'
 //需要调用Router
-Vue.use(Router)
 
+//用于练习Vuex
+import ShopHome from '@/components/vuex/shoppingcart/ShopHome'
+/*import Store from './store'
+import { currency} from './currency'
+Vue.use(Store)
+Vue.filter('currency', currency)*/
+Vue.use(Router)
 //0.用于测试组件
 //可以用  Vue.extend()  创建一个组件构造器：
 var MyComponent = Vue.extend({
@@ -53,6 +60,7 @@ const routes = [
   { path: '/content',   name: 'content',     component: Content, meta: { requiresAuth: true }},
   { path: '/page',      name: 'page',        component: Page},
   { path: '/tongxin',      name: 'tongxin',        component: Father},
+  { path: '/shopping',      name: 'shopping',        component: ShopHome},
   // 动态路径参数 以冒号开头
   { 
     path: '/user/:id',  

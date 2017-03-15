@@ -51,6 +51,10 @@
 
     <h2>5.组件之间的通信测试</h2>
     <router-link to="/tongxin">to tongxin</router-link>
+
+    <h2>6.Vuex-shopping cart 例子联系测试</h2>
+    <router-link to="/shopping">to shopping</router-link>
+
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
